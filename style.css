@@ -58,6 +58,10 @@ img {
     max-width: 100%;
 }
 
+strong {
+    font-weight: 700;
+}
+
 /* SFONDO IN CARTA ======================================= */
 
 .story-page {
@@ -81,7 +85,8 @@ img {
     isolation: isolate;
     background: var(--color-teal);
     color: #f7f2e8;
-    box-shadow: inset 0 -2px 0 var(--color-gold);
+    height: var(--header-height);
+    border-bottom: 2px solid var(--color-gold);
 }
 
 section[id] {
@@ -102,7 +107,7 @@ section[id] {
         calc(100% - var(--page-gutter) * 2),
         var(--content-width)
     );
-    min-height: var(--header-height);
+    min-height: calc(var(--header-height) - 2px);
     margin-inline: auto;
 }
 
@@ -219,6 +224,75 @@ section[id] {
     width: 100%;
     min-width: 0;
     padding-top: 12px;
+}
+
+/* Le decorazioni hanno spazi propri, separati dalle righe di testo. */
+.story-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(98px, 10vw, 156px);
+    gap: 12px;
+    align-items: stretch;
+}
+
+.story-sun-cluster {
+    position: relative;
+    pointer-events: none;
+}
+
+.story-sun-cluster--title .ceramic-sun:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 78%;
+    --tilt: -10deg;
+    --reveal-delay: 240ms;
+}
+
+.story-sun-cluster--title .ceramic-sun:nth-child(2) {
+    top: 34%;
+    left: 24%;
+    width: 74%;
+    --tilt: 8deg;
+    --reveal-delay: 320ms;
+}
+
+.story-sun-cluster--title .ceramic-sun:nth-child(3) {
+    top: 63%;
+    left: -4%;
+    width: 82%;
+    --tilt: -7deg;
+    --reveal-delay: 400ms;
+}
+
+.story-sun-cluster--bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    min-height: 180px;
+    margin-top: 30px;
+}
+
+.story-sun-cluster--bottom .ceramic-sun {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(78px, 8vw, 128px);
+}
+
+.story-sun-cluster--bottom .ceramic-sun:nth-child(1) {
+    align-self: flex-start;
+    --tilt: -11deg;
+    --reveal-delay: 260ms;
+}
+
+.story-sun-cluster--bottom .ceramic-sun:nth-child(2) {
+    align-self: flex-end;
+    --tilt: 7deg;
+    --reveal-delay: 340ms;
+}
+
+.story-sun-cluster--bottom .ceramic-sun:nth-child(3) {
+    --tilt: -6deg;
+    --reveal-delay: 420ms;
 }
 
 .section-kicker {
@@ -421,7 +495,7 @@ section[id] {
 }
 
 .ceramic-sun--three {
-    top: -2%;
+    top: 2%;
     left: 36%;
     width: 22%;
     --tilt: 7deg;
@@ -429,17 +503,17 @@ section[id] {
 }
 
 .ceramic-sun--four {
-    top: 8%;
-    left: 67%;
+    top: 9%;
+    left: 60%;
     width: 11%;
     --tilt: 9deg;
     --reveal-delay: 360ms;
 }
 
 .ceramic-sun--five {
-    top: -6%;
-    left: 88%;
-    width: 48%;
+    top: 0;
+    left: 74%;
+    width: 21%;
     --tilt: 8deg;
     --reveal-delay: 440ms;
 }
@@ -454,7 +528,7 @@ section[id] {
 
 .ceramic-sun--seven {
     top: 42%;
-    left: 81%;
+    left: 77%;
     width: 16%;
     --tilt: -6deg;
     --reveal-delay: 540ms;
@@ -469,9 +543,9 @@ section[id] {
 }
 
 .ceramic-sun--nine {
-    top: 66%;
-    left: 86%;
-    width: 26%;
+    top: 74%;
+    left: 70%;
+    width: 23%;
     --tilt: -10deg;
     --reveal-delay: 640ms;
 }
@@ -630,6 +704,7 @@ section[id] {
 }
 
 .kitchen-card {
+    position: relative;
     flex: 0 0 auto;
     width: clamp(260px, 25vw, 390px);
     height: clamp(340px, 33vw, 500px);
@@ -648,10 +723,36 @@ section[id] {
     transform: translateY(-8px) rotate(-3deg);
 }
 
-.kitchen-card img {
+.kitchen-card > img:not(.kitchen-magnet) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* La calamita appartiene alla foto: nessuna animazione indipendente. */
+.kitchen-magnet {
+    position: absolute;
+    z-index: 2;
+    top: -36px;
+    left: 14%;
+    width: clamp(64px, 6vw, 84px);
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+    transform: rotate(8deg);
+    filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.3));
+}
+
+.kitchen-card:nth-child(even) .kitchen-magnet {
+    right: 14%;
+    left: auto;
+    transform: rotate(-10deg);
+}
+
+.kitchen-card:nth-child(3n) .kitchen-magnet {
+    right: auto;
+    left: 48%;
+    transform: rotate(5deg);
 }
 
 .kitchen-slider.is-ready {
@@ -777,6 +878,18 @@ section[id] {
     font-weight: 400;
     line-height: 1.12;
     letter-spacing: -0.04em;
+}
+
+.contact-intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px 40px;
+}
+
+.contact-intro .booking-button {
+    flex-shrink: 0;
 }
 
 .contact-title em {
@@ -980,7 +1093,7 @@ section[id] {
     .site-header {
         grid-template-columns: 1fr auto auto;
         column-gap: 18px;
-        min-height: var(--header-height);
+        min-height: calc(var(--header-height) - 2px);
     }
 
     .site-header__logo-space {
@@ -1094,7 +1207,7 @@ section[id] {
     }
 
     .ceramic-sun--five {
-        left: 91%;
+        left: 74%;
     }
 
     .kitchen-section {
@@ -1116,7 +1229,7 @@ section[id] {
 
     .site-header {
         column-gap: 11px;
-        min-height: var(--header-height);
+        min-height: calc(var(--header-height) - 2px);
     }
 
     .site-header__logo-space {
@@ -1141,6 +1254,35 @@ section[id] {
 
     .story-layout {
         row-gap: 50px;
+    }
+
+    .story-intro {
+        display: block;
+    }
+
+    .story-sun-cluster--title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
+        height: 110px;
+        margin-top: 22px;
+    }
+
+    .story-sun-cluster--title .ceramic-sun:nth-child(n) {
+        position: relative;
+        inset: auto;
+        width: clamp(64px, 18vw, 90px);
+    }
+
+    .story-sun-cluster--bottom {
+        gap: 20px;
+        min-height: 135px;
+        margin-top: 26px;
+    }
+
+    .story-sun-cluster--bottom .ceramic-sun {
+        width: clamp(64px, 18vw, 90px);
     }
 
     .section-kicker {
@@ -1191,8 +1333,8 @@ section[id] {
     }
 
     .ceramic-sun--three {
-        top: -4%;
-        width: 25%;
+        top: 2%;
+        width: 22%;
     }
 
     .ceramic-sun--four {
@@ -1206,8 +1348,8 @@ section[id] {
     }
 
     .ceramic-sun--nine {
-        left: 89%;
-        top: 72%;
+        left: 68%;
+        top: 74%;
     }
 
     .kitchen-section {
@@ -1229,6 +1371,10 @@ section[id] {
     .kitchen-card {
         width: 250px;
         height: 340px;
+    }
+
+    .kitchen-magnet {
+        top: -30px;
     }
 
     .kitchen-slider.is-ready .kitchen-track {
@@ -1262,6 +1408,19 @@ section[id] {
         grid-template-columns: minmax(0, 1fr);
         gap: 36px;
         margin-top: 40px;
+    }
+
+    .contact-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .contact-intro .booking-button {
+        min-width: 188px;
+        min-height: 44px;
+        padding: 12px 22px;
+        font-size: 12px;
     }
 
     .site-dialog {

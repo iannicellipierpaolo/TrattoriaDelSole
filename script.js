@@ -130,6 +130,7 @@
     const kitchenGroup = document.querySelector(".kitchen-group");
 
     if (kitchenSlider && kitchenTrack && kitchenGroup) {
+        // Ogni copia include foto e calamita nello stesso elemento.
         const duplicate = kitchenGroup.cloneNode(true);
 
         duplicate.setAttribute("aria-hidden", "true");
