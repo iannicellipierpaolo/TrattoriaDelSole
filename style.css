@@ -113,12 +113,20 @@ section[id] {
 
 .site-header__logo-space {
     min-height: 64px;
+    min-width: 0;
+    width: min(100%, 300px);
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.site-header__logo {
     display: block;
-    padding-block: 8px;
-    font-family: var(--font-heading);
-    font-style: italic;
-    font-size: 25px;
-    line-height: 1.05;
+    width: 100%;
+    height: auto;
+    max-height: 76px;
+    object-fit: contain;
+    object-position: left center;
 }
 
 .site-nav {
@@ -1181,8 +1189,8 @@ section[id] {
         min-height: calc(var(--header-height) - 2px);
     }
 
-    .site-header__logo-space {
-        font-size: 19px;
+    .site-header__logo {
+        max-height: 54px;
     }
 
     .booking-button {
@@ -1424,7 +1432,7 @@ section[id] {
     }
 
     .story-sun-position--04 {
-        --sun-left: 68.7742%;
+        --sun-left: 66.7742%;
         --sun-top: 38.775%;
         --sun-width: 5.5556%;
         --sun-transform: matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0);
@@ -1453,7 +1461,7 @@ section[id] {
 
     .story-sun-position--05 {
         --sun-left: 45.5401%;
-        --sun-top: 66.155%;
+        --sun-top: 64.055%;
         --sun-width: 12.3611%;
         --sun-transform: matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0);
     }
@@ -1474,7 +1482,7 @@ section[id] {
 
     .story-sun-position--09 {
         --sun-left: 77.6134%;
-        --sun-top: 31.4886%;
+        --sun-top: 29.3886%;
         --sun-width: 8.8194%;
         --sun-transform: matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0);
     }

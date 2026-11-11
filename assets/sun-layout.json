@@ -16,7 +16,7 @@
         },
         {
             "asset": "sole-04",
-            "leftPct": 68.7742,
+            "leftPct": 66.7742,
             "topPct": 38.775,
             "widthPct": 5.5556,
             "transform": "matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0)"
@@ -45,7 +45,7 @@
         {
             "asset": "sole-05",
             "leftPct": 45.5401,
-            "topPct": 66.155,
+            "topPct": 64.055,
             "widthPct": 12.3611,
             "transform": "matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0)"
         },
@@ -66,7 +66,7 @@
         {
             "asset": "sole-09",
             "leftPct": 77.6134,
-            "topPct": 31.4886,
+            "topPct": 29.3886,
             "widthPct": 8.8194,
             "transform": "matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0)"
         }
