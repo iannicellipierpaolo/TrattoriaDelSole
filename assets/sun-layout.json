@@ -1,0 +1,74 @@
+{
+    "schema": "trattoria-sun-layout-v1",
+    "sourceLibraryId": "libfile_4118ebaee56c8191958ddf04887eeaf8",
+    "sourceVersion": 7,
+    "repository": "iannicellipierpaolo/TrattoriaDelSole",
+    "referenceWidth": 1440,
+    "referenceHeight": 1139,
+    "breakpoint": "desktop >= 1021px; conservare il layout mobile",
+    "suns": [
+        {
+            "asset": "sole-01",
+            "leftPct": 26.6768,
+            "topPct": 72.3535,
+            "widthPct": 5.2778,
+            "transform": "matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0)"
+        },
+        {
+            "asset": "sole-04",
+            "leftPct": 68.7742,
+            "topPct": 38.775,
+            "widthPct": 5.5556,
+            "transform": "matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0)"
+        },
+        {
+            "asset": "sole-03",
+            "leftPct": 91.0915,
+            "topPct": 66.6552,
+            "widthPct": 5.4167,
+            "transform": "matrix(0.981627, -0.190809, 0.190809, 0.981627, 0, 0)"
+        },
+        {
+            "asset": "sole-07",
+            "leftPct": 36.4289,
+            "topPct": 53.3702,
+            "widthPct": 5.4167,
+            "transform": "matrix(0.992546, 0.121869, -0.121869, 0.992546, 0, 0)"
+        },
+        {
+            "asset": "sole-02",
+            "leftPct": 5.7211,
+            "topPct": 60.0629,
+            "widthPct": 9.375,
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"
+        },
+        {
+            "asset": "sole-05",
+            "leftPct": 45.5401,
+            "topPct": 66.155,
+            "widthPct": 12.3611,
+            "transform": "matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0)"
+        },
+        {
+            "asset": "sole-06",
+            "leftPct": 88.3551,
+            "topPct": 4.5769,
+            "widthPct": 8.8194,
+            "transform": "matrix(0.987688, -0.156434, 0.156434, 0.987688, 0, 0)"
+        },
+        {
+            "asset": "sole-08",
+            "leftPct": 39.1177,
+            "topPct": 11.6094,
+            "widthPct": 11.1806,
+            "transform": "matrix(0.987688, 0.156434, -0.156434, 0.987688, 0, 0)"
+        },
+        {
+            "asset": "sole-09",
+            "leftPct": 77.6134,
+            "topPct": 31.4886,
+            "widthPct": 8.8194,
+            "transform": "matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0)"
+        }
+    ]
+}

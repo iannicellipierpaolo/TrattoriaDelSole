@@ -244,31 +244,21 @@ section[id] {
     left: 0;
     width: 78%;
     --tilt: -10deg;
-    --reveal-delay: 240ms;
 }
 
 .story-sun-cluster--title .ceramic-sun:nth-child(2) {
-    top: 34%;
-    left: 24%;
-    width: 74%;
-    --tilt: 8deg;
-    --reveal-delay: 320ms;
-}
-
-.story-sun-cluster--title .ceramic-sun:nth-child(3) {
-    top: 63%;
-    left: -4%;
+    top: 58%;
+    left: 14%;
     width: 82%;
-    --tilt: -7deg;
-    --reveal-delay: 400ms;
+    --tilt: 8deg;
 }
 
 .story-sun-cluster--bottom {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 24px;
-    min-height: 180px;
+    gap: 44px;
+    min-height: 150px;
     margin-top: 30px;
 }
 
@@ -281,18 +271,11 @@ section[id] {
 .story-sun-cluster--bottom .ceramic-sun:nth-child(1) {
     align-self: flex-start;
     --tilt: -11deg;
-    --reveal-delay: 260ms;
 }
 
 .story-sun-cluster--bottom .ceramic-sun:nth-child(2) {
     align-self: flex-end;
     --tilt: 7deg;
-    --reveal-delay: 340ms;
-}
-
-.story-sun-cluster--bottom .ceramic-sun:nth-child(3) {
-    --tilt: -6deg;
-    --reveal-delay: 420ms;
 }
 
 .section-kicker {
@@ -399,12 +382,6 @@ section[id] {
     aspect-ratio: 1 / 1.02;
     min-width: 0;
     pointer-events: none;
-    transform: translate3d(
-        var(--scene-x, 0),
-        var(--scene-y, 0),
-        0
-    );
-    transition: transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .polaroid,
@@ -417,10 +394,6 @@ section[id] {
     z-index: 2;
     filter: drop-shadow(5px 10px 10px rgba(65, 42, 29, 0.22));
     transform: rotate(var(--tilt, 0deg));
-    transition:
-        transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1),
-        filter 450ms ease,
-        opacity 800ms ease;
 }
 
 .polaroid img,
@@ -435,7 +408,6 @@ section[id] {
     left: 0;
     width: 53%;
     --tilt: -7deg;
-    --reveal-delay: 180ms;
 }
 
 .polaroid--piatto {
@@ -444,7 +416,6 @@ section[id] {
     left: 47%;
     width: 49%;
     --tilt: 5deg;
-    --reveal-delay: 250ms;
 }
 
 .polaroid--ceramiche {
@@ -453,7 +424,6 @@ section[id] {
     left: 10%;
     width: 38%;
     --tilt: 6deg;
-    --reveal-delay: 340ms;
 }
 
 .polaroid--famiglia {
@@ -462,52 +432,19 @@ section[id] {
     left: 55%;
     width: 35%;
     --tilt: 5deg;
-    --reveal-delay: 410ms;
 }
 
 .ceramic-sun {
     z-index: 8;
     filter: drop-shadow(3px 8px 5px rgba(69, 39, 16, 0.26));
     transform: rotate(var(--tilt, 0deg));
-    transition:
-        opacity 850ms ease,
-        transform 850ms cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.ceramic-sun img {
-    animation: ceramic-float 8s ease-in-out infinite;
-}
-
-.ceramic-sun--one {
-    top: 5%;
-    left: 7%;
-    width: 13%;
-    --tilt: -9deg;
-    --reveal-delay: 260ms;
 }
 
 .ceramic-sun--two {
-    top: 13%;
-    left: 23%;
-    width: 14%;
+    top: 8%;
+    left: 10%;
+    width: 16%;
     --tilt: -5deg;
-    --reveal-delay: 330ms;
-}
-
-.ceramic-sun--three {
-    top: 2%;
-    left: 36%;
-    width: 22%;
-    --tilt: 7deg;
-    --reveal-delay: 290ms;
-}
-
-.ceramic-sun--four {
-    top: 9%;
-    left: 60%;
-    width: 11%;
-    --tilt: 9deg;
-    --reveal-delay: 360ms;
 }
 
 .ceramic-sun--five {
@@ -515,46 +452,27 @@ section[id] {
     left: 74%;
     width: 21%;
     --tilt: 8deg;
-    --reveal-delay: 440ms;
 }
 
 .ceramic-sun--six {
     top: 43%;
-    left: 26%;
+    left: 33%;
     width: 15%;
     --tilt: -9deg;
-    --reveal-delay: 490ms;
-}
-
-.ceramic-sun--seven {
-    top: 42%;
-    left: 77%;
-    width: 16%;
-    --tilt: -6deg;
-    --reveal-delay: 540ms;
 }
 
 .ceramic-sun--eight {
-    top: 76%;
-    left: 0;
-    width: 21%;
+    top: 77%;
+    left: 1%;
+    width: 19%;
     --tilt: 9deg;
-    --reveal-delay: 590ms;
 }
 
 .ceramic-sun--nine {
-    top: 74%;
-    left: 70%;
-    width: 23%;
+    top: 44%;
+    left: 78%;
+    width: 15%;
     --tilt: -10deg;
-    --reveal-delay: 640ms;
-}
-
-.ceramic-sun--two img,
-.ceramic-sun--four img,
-.ceramic-sun--six img,
-.ceramic-sun--eight img {
-    animation-delay: -4s;
 }
 
 /* BORDO INFERIORE DI CARTA STRAPPATA ==================== */
@@ -605,11 +523,6 @@ section[id] {
     transform: translateY(17px);
 }
 
-.js .polaroid.reveal:not(.is-visible),
-.js .ceramic-sun.reveal:not(.is-visible) {
-    transform: translateY(22px) rotate(var(--tilt, 0deg));
-}
-
 .story-copy .reveal {
     transition:
         opacity 800ms ease,
@@ -618,17 +531,6 @@ section[id] {
 
 .js .reveal.is-visible {
     transition-delay: var(--reveal-delay, 0ms);
-}
-
-@keyframes ceramic-float {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
 }
 
 /* LA CUCINA ============================================= */
@@ -733,9 +635,9 @@ section[id] {
 .kitchen-magnet {
     position: absolute;
     z-index: 2;
-    top: -36px;
+    top: -30px;
     left: 14%;
-    width: clamp(64px, 6vw, 84px);
+    width: clamp(60px, 5vw, 78px);
     height: auto;
     object-fit: contain;
     pointer-events: none;
@@ -743,16 +645,31 @@ section[id] {
     filter: drop-shadow(2px 4px 3px rgba(0, 0, 0, 0.3));
 }
 
-.kitchen-card:nth-child(even) .kitchen-magnet {
+.kitchen-card:nth-child(even) .kitchen-magnet:not(.kitchen-magnet--secondary) {
     right: 14%;
     left: auto;
     transform: rotate(-10deg);
 }
 
-.kitchen-card:nth-child(3n) .kitchen-magnet {
+.kitchen-card:nth-child(3n) .kitchen-magnet:not(.kitchen-magnet--secondary) {
     right: auto;
     left: 48%;
     transform: rotate(5deg);
+}
+
+.kitchen-magnet--secondary {
+    top: auto;
+    right: 12%;
+    bottom: -20px;
+    left: auto;
+    width: clamp(46px, 3.8vw, 60px);
+    transform: rotate(-9deg);
+}
+
+.kitchen-card:nth-child(even) .kitchen-magnet--secondary {
+    right: auto;
+    left: 14%;
+    transform: rotate(11deg);
 }
 
 .kitchen-slider.is-ready {
@@ -789,10 +706,10 @@ section[id] {
 
 .menu-banner {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 0.42fr) 54px;
+    align-items: center;
+    gap: 14px 32px;
     width: 100%;
     min-height: 240px;
     padding: 48px max(
@@ -812,14 +729,19 @@ section[id] {
 }
 
 .menu-banner__eyebrow {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.18em;
 }
 
 .menu-banner__title {
-    margin-top: 14px;
-    padding-right: 90px;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    margin: 0;
     font-family: var(--font-heading);
     font-size: clamp(48px, 5.4vw, 86px);
     line-height: 1.1;
@@ -827,15 +749,10 @@ section[id] {
 }
 
 .menu-banner__arrow {
-    position: absolute;
-    top: 50%;
-    right: max(
-        var(--page-gutter),
-        calc((100% - var(--content-width)) / 2)
-    );
+    grid-column: 3;
+    grid-row: 1 / span 2;
     width: 54px;
     height: 54px;
-    transform: translateY(-50%);
     transition: transform 250ms ease;
 }
 
@@ -845,7 +762,39 @@ section[id] {
 }
 
 .menu-banner:hover .menu-banner__arrow {
-    transform: translate(8px, -50%);
+    transform: translateX(8px);
+}
+
+.menu-banner__suns {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 100%;
+    max-width: 320px;
+    min-height: 160px;
+    aspect-ratio: 1.6;
+    justify-self: center;
+    pointer-events: none;
+}
+
+.menu-banner__suns img {
+    position: absolute;
+    width: clamp(84px, 10vw, 134px);
+    height: auto;
+    filter: drop-shadow(3px 6px 4px rgba(69, 39, 16, 0.24));
+}
+
+.menu-banner__suns img:first-child {
+    top: 0;
+    left: 0;
+    transform: rotate(-12deg);
+}
+
+.menu-banner__suns img:last-child {
+    right: 0;
+    bottom: 0;
+    width: clamp(76px, 9vw, 120px);
+    transform: rotate(9deg);
 }
 
 .menu-banner:focus-visible {
@@ -1323,22 +1272,8 @@ section[id] {
         margin-left: -4%;
     }
 
-    .ceramic-sun--one {
-        top: 1%;
-        width: 16%;
-    }
-
     .ceramic-sun--two {
         width: 17%;
-    }
-
-    .ceramic-sun--three {
-        top: 2%;
-        width: 22%;
-    }
-
-    .ceramic-sun--four {
-        width: 16%;
     }
 
     .ceramic-sun--eight {
@@ -1348,8 +1283,9 @@ section[id] {
     }
 
     .ceramic-sun--nine {
-        left: 68%;
-        top: 74%;
+        left: 77%;
+        top: 44%;
+        width: 17%;
     }
 
     .kitchen-section {
@@ -1373,8 +1309,8 @@ section[id] {
         height: 340px;
     }
 
-    .kitchen-magnet {
-        top: -30px;
+    .kitchen-magnet:not(.kitchen-magnet--secondary) {
+        top: -26px;
     }
 
     .kitchen-slider.is-ready .kitchen-track {
@@ -1382,13 +1318,14 @@ section[id] {
     }
 
     .menu-banner {
+        grid-template-columns: minmax(0, 1fr) 34px;
+        column-gap: 16px;
         min-height: 200px;
         padding-block: 36px;
     }
 
     .menu-banner__title {
         font-size: 42px;
-        padding-right: 48px;
     }
 
     .menu-banner__eyebrow {
@@ -1396,8 +1333,19 @@ section[id] {
     }
 
     .menu-banner__arrow {
+        grid-column: 2;
+        grid-row: 2;
         width: 34px;
         height: 34px;
+    }
+
+    .menu-banner__suns {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        justify-self: end;
+        width: min(250px, 100%);
+        min-height: 132px;
+        aspect-ratio: 1.8;
     }
 
     .contact-section {
@@ -1425,6 +1373,110 @@ section[id] {
 
     .site-dialog {
         padding: 64px 24px 28px;
+    }
+}
+
+/* POSIZIONI CONFERMATE NELL’EDITOR: SOLO DESKTOP ============ */
+
+.story-sun-layout {
+    display: none;
+}
+
+@media (min-width: 1021px) {
+    /* Conserva gli ingombri originali per non spostare foto e testi. */
+    .story-page .ceramic-sun {
+        visibility: hidden;
+    }
+
+    .story-page .story-copy {
+        z-index: 5;
+    }
+
+    .story-sun-layout {
+        position: absolute;
+        z-index: 4;
+        inset: 0;
+        display: block;
+        pointer-events: none;
+    }
+
+    .story-sun-position {
+        position: absolute;
+        left: var(--sun-left);
+        top: var(--sun-top);
+        width: var(--sun-width);
+        transform: var(--sun-transform);
+        transform-origin: center;
+        filter: drop-shadow(3px 8px 5px rgba(69, 39, 16, 0.26));
+    }
+
+    .story-sun-position img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .story-sun-position--01 {
+        --sun-left: 26.6768%;
+        --sun-top: 72.3535%;
+        --sun-width: 5.2778%;
+        --sun-transform: matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0);
+    }
+
+    .story-sun-position--04 {
+        --sun-left: 68.7742%;
+        --sun-top: 38.775%;
+        --sun-width: 5.5556%;
+        --sun-transform: matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0);
+    }
+
+    .story-sun-position--03 {
+        --sun-left: 91.0915%;
+        --sun-top: 66.6552%;
+        --sun-width: 5.4167%;
+        --sun-transform: matrix(0.981627, -0.190809, 0.190809, 0.981627, 0, 0);
+    }
+
+    .story-sun-position--07 {
+        --sun-left: 36.4289%;
+        --sun-top: 53.3702%;
+        --sun-width: 5.4167%;
+        --sun-transform: matrix(0.992546, 0.121869, -0.121869, 0.992546, 0, 0);
+    }
+
+    .story-sun-position--02 {
+        --sun-left: 5.7211%;
+        --sun-top: 60.0629%;
+        --sun-width: 9.375%;
+        --sun-transform: matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0);
+    }
+
+    .story-sun-position--05 {
+        --sun-left: 45.5401%;
+        --sun-top: 66.155%;
+        --sun-width: 12.3611%;
+        --sun-transform: matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0);
+    }
+
+    .story-sun-position--06 {
+        --sun-left: 88.3551%;
+        --sun-top: 4.5769%;
+        --sun-width: 8.8194%;
+        --sun-transform: matrix(0.987688, -0.156434, 0.156434, 0.987688, 0, 0);
+    }
+
+    .story-sun-position--08 {
+        --sun-left: 39.1177%;
+        --sun-top: 11.6094%;
+        --sun-width: 11.1806%;
+        --sun-transform: matrix(0.987688, 0.156434, -0.156434, 0.987688, 0, 0);
+    }
+
+    .story-sun-position--09 {
+        --sun-left: 77.6134%;
+        --sun-top: 31.4886%;
+        --sun-width: 8.8194%;
+        --sun-transform: matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0);
     }
 }
 

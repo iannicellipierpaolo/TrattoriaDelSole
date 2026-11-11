@@ -176,33 +176,4 @@
     revealElements.forEach((element) => {
         observer.observe(element);
     });
-
-    /* MOVIMENTO LEGGERO DEL COLLAGE ---------------------- */
-
-    const storySection = document.querySelector(".story-section");
-    const storyScene = document.querySelector(".story-scene");
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-
-    if (storySection && storyScene && finePointer) {
-        storySection.addEventListener("pointermove", (event) => {
-            const bounds = storySection.getBoundingClientRect();
-            const horizontal = (event.clientX - bounds.left) / bounds.width;
-            const vertical = (event.clientY - bounds.top) / bounds.height;
-
-            storyScene.style.setProperty(
-                "--scene-x",
-                `${(horizontal - 0.5) * 8}px`
-            );
-
-            storyScene.style.setProperty(
-                "--scene-y",
-                `${(vertical - 0.5) * 6}px`
-            );
-        });
-
-        storySection.addEventListener("pointerleave", () => {
-            storyScene.style.removeProperty("--scene-x");
-            storyScene.style.removeProperty("--scene-y");
-        });
-    }
 })();
