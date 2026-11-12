@@ -14,14 +14,14 @@
     --font-heading: "Bodoni Moda", Georgia, serif;
     --font-body: "Manrope", Arial, sans-serif;
 
-    /* Modifica questi valori per regolare le larghezze */
+    
     --content-width: 1480px;
     --page-gutter: 64px;
     --header-height: 104px;
     --navigation-gap: clamp(26px, 3.5vw, 64px);
 }
 
-/* RESET ================================================= */
+-------------------------------------------------------------------
 
 *,
 *::before,
@@ -874,6 +874,7 @@ section[id] {
 
 .contact-block h3 {
     margin: 20px 0;
+    color: var(--color-gold);
     font-family: var(--font-heading);
     font-size: 35px;
     font-weight: 400;
@@ -1384,110 +1385,6 @@ section[id] {
     }
 }
 
-/* POSIZIONI CONFERMATE NELL’EDITOR: SOLO DESKTOP ============ */
-
-.story-sun-layout {
-    display: none;
-}
-
-@media (min-width: 1021px) {
-    /* Conserva gli ingombri originali per non spostare foto e testi. */
-    .story-page .ceramic-sun {
-        visibility: hidden;
-    }
-
-    .story-page .story-copy {
-        z-index: 5;
-    }
-
-    .story-sun-layout {
-        position: absolute;
-        z-index: 4;
-        inset: 0;
-        display: block;
-        pointer-events: none;
-    }
-
-    .story-sun-position {
-        position: absolute;
-        left: var(--sun-left);
-        top: var(--sun-top);
-        width: var(--sun-width);
-        transform: var(--sun-transform);
-        transform-origin: center;
-        filter: drop-shadow(3px 8px 5px rgba(69, 39, 16, 0.26));
-    }
-
-    .story-sun-position img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    .story-sun-position--01 {
-        --sun-left: 26.6768%;
-        --sun-top: 72.3535%;
-        --sun-width: 5.2778%;
-        --sun-transform: matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0);
-    }
-
-    .story-sun-position--04 {
-        --sun-left: 66.7742%;
-        --sun-top: 38.775%;
-        --sun-width: 5.5556%;
-        --sun-transform: matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0);
-    }
-
-    .story-sun-position--03 {
-        --sun-left: 91.0915%;
-        --sun-top: 66.6552%;
-        --sun-width: 5.4167%;
-        --sun-transform: matrix(0.981627, -0.190809, 0.190809, 0.981627, 0, 0);
-    }
-
-    .story-sun-position--07 {
-        --sun-left: 36.4289%;
-        --sun-top: 53.3702%;
-        --sun-width: 5.4167%;
-        --sun-transform: matrix(0.992546, 0.121869, -0.121869, 0.992546, 0, 0);
-    }
-
-    .story-sun-position--02 {
-        --sun-left: 5.7211%;
-        --sun-top: 60.0629%;
-        --sun-width: 9.375%;
-        --sun-transform: matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0);
-    }
-
-    .story-sun-position--05 {
-        --sun-left: 45.5401%;
-        --sun-top: 64.055%;
-        --sun-width: 12.3611%;
-        --sun-transform: matrix(0.990268, 0.139173, -0.139173, 0.990268, 0, 0);
-    }
-
-    .story-sun-position--06 {
-        --sun-left: 88.3551%;
-        --sun-top: 4.5769%;
-        --sun-width: 8.8194%;
-        --sun-transform: matrix(0.987688, -0.156434, 0.156434, 0.987688, 0, 0);
-    }
-
-    .story-sun-position--08 {
-        --sun-left: 39.1177%;
-        --sun-top: 11.6094%;
-        --sun-width: 11.1806%;
-        --sun-transform: matrix(0.987688, 0.156434, -0.156434, 0.987688, 0, 0);
-    }
-
-    .story-sun-position--09 {
-        --sun-left: 77.6134%;
-        --sun-top: 29.3886%;
-        --sun-width: 8.8194%;
-        --sun-transform: matrix(0.984808, -0.173648, 0.173648, 0.984808, 0, 0);
-    }
-}
-
 /* ACCESSIBILITÀ ========================================= */
 
 :focus-visible {
@@ -1517,5 +1414,248 @@ section[id] {
 
     .kitchen-group[aria-hidden="true"] {
         display: none;
+    }
+}
+/* ========================================
+   FASCIA DEMO — FONTI E CREDITI
+   ======================================== */
+
+.demo-credits,
+.demo-dialog {
+    --demo-background: var(--color-teal, #174d55);
+    --demo-paper: var(--color-paper, #f7f2e8);
+    --demo-gold: var(--color-gold, #c79232);
+}
+
+.demo-credits,
+.demo-credits *,
+.demo-dialog,
+.demo-dialog * {
+    box-sizing: border-box;
+}
+
+.demo-credits {
+    display: grid;
+    grid-template-columns: minmax(180px, 280px) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 32px;
+
+    padding: 36px var(--page-gutter, 24px);
+
+    border-top: 1px solid var(--demo-gold);
+
+    background: var(--demo-background);
+    color: var(--demo-paper);
+
+    font-family: inherit;
+}
+
+.demo-credits__brand {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+}
+
+.demo-credits__brand img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.demo-credits__intro {
+    min-width: 0;
+    text-align: center;
+}
+
+.demo-credits__eyebrow {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--demo-gold);
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.16em;
+}
+
+.demo-credits__title {
+    margin: 0;
+
+    color: inherit;
+
+    font-family: var(--font-heading, Georgia, serif);
+    font-size: clamp(23px, 2.2vw, 32px);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.demo-credits__subtitle {
+    margin: 10px 0 0;
+
+    color: inherit;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    opacity: 0.8;
+}
+
+.demo-credits__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 14px 20px;
+
+    border: 1px solid var(--demo-gold);
+    border-radius: 4px;
+
+    background: transparent;
+    color: var(--demo-paper);
+
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background-color 200ms ease,
+        color 200ms ease;
+}
+
+.demo-credits__button:hover {
+    background: var(--demo-gold);
+    color: var(--demo-background);
+}
+
+.demo-credits__button:focus-visible,
+.demo-credits__brand:focus-visible,
+.demo-dialog__close:focus-visible {
+    outline: 2px solid var(--demo-gold);
+    outline-offset: 5px;
+}
+
+/* FINESTRA A COMPARSA --------------------- */
+
+.demo-dialog {
+    position: fixed;
+
+    width: min(680px, calc(100% - 32px));
+    max-height: calc(100dvh - 48px);
+
+    margin: auto;
+    padding: 56px 40px 40px;
+    overflow-y: auto;
+
+    border: 1px solid var(--demo-gold);
+    border-radius: 4px;
+
+    background: var(--demo-background);
+    color: var(--demo-paper);
+
+    font-family: inherit;
+
+    box-shadow: 0 24px 80px rgb(0 0 0 / 35%);
+}
+
+.demo-dialog::backdrop {
+    background: rgb(7 32 35 / 80%);
+    backdrop-filter: blur(5px);
+}
+
+.demo-dialog h2 {
+    margin: 0 0 24px;
+
+    color: var(--demo-gold);
+
+    font-family: var(--font-heading, Georgia, serif);
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.demo-dialog p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.demo-dialog__block {
+    margin-top: 24px;
+}
+
+.demo-dialog__block h3 {
+    margin: 0 0 8px;
+
+    color: var(--demo-gold);
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.demo-dialog__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    display: grid;
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    border: 1px solid var(--demo-gold);
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--demo-paper);
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.demo-dialog__close:hover {
+    color: var(--demo-gold);
+}
+
+html.demo-credits-is-open,
+html.demo-credits-is-open body {
+    overflow: hidden;
+}
+
+/* TABLET E MOBILE ------------------------ */
+
+@media (max-width: 1020px) {
+    .demo-credits {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 24px;
+    }
+
+    .demo-credits__brand {
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 600px) {
+    .demo-dialog {
+        padding: 58px 24px 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .demo-credits__button {
+        transition: none;
     }
 }
