@@ -727,6 +727,7 @@
         class="demo-credits__button"
         id="demo-credits-open"
         type="button"
+        data-dialog="demo-credits-dialog"
         aria-haspopup="dialog"
         aria-controls="demo-credits-dialog"
     >
@@ -742,14 +743,16 @@
     aria-labelledby="demo-dialog-title"
     aria-describedby="demo-dialog-description"
 >
-    <button
-        class="demo-dialog__close"
-        type="button"
-        aria-label="Chiudi fonti e crediti"
-        autofocus
-    >
-        <span aria-hidden="true">×</span>
-    </button>
+    <form method="dialog">
+        <button
+            class="demo-dialog__close"
+            type="submit"
+            aria-label="Chiudi fonti e crediti"
+            autofocus
+        >
+            <span aria-hidden="true">×</span>
+        </button>
+    </form>
 
     <span class="demo-credits__eyebrow">
         DIETRO IL PROGETTO
